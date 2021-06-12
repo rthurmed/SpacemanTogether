@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/spaceman/Spaceman.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/chain/Chain.gd" type="Script" id=2]
+[ext_resource path="res://src/chain/Knot.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/astronaut2-Sheet.png" type="Texture" id=4]
+[ext_resource path="res://src/spaceman/PlayerCamera.gd" type="Script" id=5]
+
+[node name="Player" type="Node2D"]
+
+[node name="Spaceman0" parent="." instance=ExtResource( 1 )]
+z_index = 2
+
+[node name="Spaceman1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 60, 0 )
+z_index = 2
+texture = ExtResource( 4 )
+player_id = 1
+
+[node name="Chain" type="Node" parent="."]
+script = ExtResource( 2 )
+Segment = ExtResource( 3 )
+segment_width = 4
+start_path = NodePath("../Spaceman0")
+end_path = NodePath("../Spaceman1")
+
+[node name="PlayerCamera" type="Camera2D" parent="."]
+position = Vector2( 30, 100 )
+current = true
+script = ExtResource( 5 )
+speed = 4
