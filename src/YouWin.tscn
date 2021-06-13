@@ -39,7 +39,7 @@ __meta__ = {
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 texture = ExtResource( 3 )
-texture_offset = Vector2( 0, -86.7285 )
+texture_offset = Vector2( 0, -133.745 )
 polygon = PoolVector2Array( -12, -9, -9, 252, 286, 250, 280, -10 )
 
 [node name="Label" type="Label" parent="."]
