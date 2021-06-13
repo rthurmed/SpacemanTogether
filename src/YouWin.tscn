@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/font/mousetrap.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/escape-pod-Sheet.png" type="Texture" id=2]
+[ext_resource path="res://assets/stars.png" type="Texture" id=3]
+[ext_resource path="res://src/YouWin.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+extra_spacing_top = -16
+extra_spacing_space = -4
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "autoplay"
+length = 4.0
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Polygon2D:texture_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -240 ) ]
+}
+
+[node name="YouWin" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+texture = ExtResource( 3 )
+texture_offset = Vector2( 0, -86.7285 )
+polygon = PoolVector2Array( -12, -9, -9, 252, 286, 250, 280, -10 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -67.5
+margin_top = -21.0
+margin_right = 67.5
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 1 )
+text = "YOU WIN"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PodSprite" type="Sprite" parent="."]
+position = Vector2( 129, 64 )
+texture = ExtResource( 2 )
+hframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/autoplay = SubResource( 2 )
+
+[node name="PlayAgain" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -52.5
+margin_top = 40.0
+margin_right = 52.5
+margin_bottom = 60.0
+text = "PLAY AGAIN"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="PlayAgain" to="." method="_on_PlayAgain_pressed"]

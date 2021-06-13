@@ -7,18 +7,18 @@
 [ext_resource path="res://src/spaceman/state/Fly.gd" type="Script" id=5]
 [ext_resource path="res://src/spaceman/Spaceman.gd" type="Script" id=6]
 
-[sub_resource type="PhysicsMaterial" id=6]
+[sub_resource type="PhysicsMaterial" id=1]
 bounce = 0.2
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 3.0
 height = 7.0
 
-[sub_resource type="Gradient" id=2]
+[sub_resource type="Gradient" id=3]
 offsets = PoolRealArray( 0, 0.711409, 1 )
 colors = PoolColorArray( 0.698039, 0.737255, 0.760784, 1, 0.698039, 0.737255, 0.760784, 0.498039, 0.698039, 0.737255, 0.760784, 0 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -33,7 +33,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -48,7 +48,7 @@ tracks/0/keys = {
 "values": [ 1 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 length = 0.4
 loop = true
 step = 0.2
@@ -66,7 +66,7 @@ tracks/0/keys = {
 }
 
 [node name="Spaceman" type="RigidBody2D"]
-physics_material_override = SubResource( 6 )
+physics_material_override = SubResource( 1 )
 script = ExtResource( 6 )
 texture = ExtResource( 1 )
 
@@ -77,7 +77,7 @@ vframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 0.5 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="JetpackParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2( 0, 2 )
@@ -95,12 +95,12 @@ initial_velocity = 40.0
 angle = 200.0
 angle_random = 0.4
 scale_amount = 3.0
-color_ramp = SubResource( 2 )
+color_ramp = SubResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/fly = SubResource( 3 )
-anims/idle = SubResource( 4 )
-anims/walk = SubResource( 5 )
+anims/fly = SubResource( 4 )
+anims/idle = SubResource( 5 )
+anims/walk = SubResource( 6 )
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( 2 )

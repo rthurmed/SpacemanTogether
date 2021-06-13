@@ -24,4 +24,4 @@ func _on_Continue_pressed():
 
 func _on_Restart_pressed():
 	paused(false)
-	get_tree().reload_current_scene()
+	var _ok = get_tree().reload_current_scene()

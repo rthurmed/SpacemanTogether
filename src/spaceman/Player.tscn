@@ -25,7 +25,7 @@ start_path = NodePath("../Spaceman0")
 end_path = NodePath("../Spaceman1")
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
-position = Vector2( 30, 100 )
+position = Vector2( 30, 102 )
 current = true
 script = ExtResource( 5 )
 speed = 4

@@ -4,7 +4,7 @@ extends State
 onready var spaceman: Spaceman = owner
 
 var torque_speed = 75
-var impulse_speed = Vector2.UP * 100
+var impulse_speed = Vector2.UP * 120
 
 var input: Vector2
 var impulse: Vector2

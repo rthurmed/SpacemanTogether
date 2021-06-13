@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/stars.png-0cec3e64e602a6d2ff05e29e04abb435.stex"
+path="res://.import/escape-pod-Sheet.png-9b64456068003db84cf50e938ae5487d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/stars.png"
-dest_files=[ "res://.import/stars.png-0cec3e64e602a6d2ff05e29e04abb435.stex" ]
+source_file="res://assets/escape-pod-Sheet.png"
+dest_files=[ "res://.import/escape-pod-Sheet.png-9b64456068003db84cf50e938ae5487d.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
